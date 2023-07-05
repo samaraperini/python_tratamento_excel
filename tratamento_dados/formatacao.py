@@ -3,11 +3,11 @@ from pandas import Series
 
 LISTA_TERMOS_EXCLUIR = ['ESPÓLIO DE', 'E OUTROS', 'E OUTRAS', 'E OUTROS(AS)']
 
-def formatar_precatorio_processo(processo_precatorio):
-    processo_precatorio = str(processo_precatorio)
-    if len(processo_precatorio) != 28:
-        processo_precatorio = '{}-{}.{}.{}.{}.{}'.format(processo_precatorio[:7], processo_precatorio[7:9], processo_precatorio[9:13], processo_precatorio[13:14], processo_precatorio[14:16], processo_precatorio[16:])
-    return processo_precatorio
+def formatar_processo(processo):
+    processo = str(processo)
+    if len(processo) != 28:
+        processo = '{}-{}.{}.{}.{}.{}'.format(processo[:7], processo[7:9], processo[9:13], processo[13:14], processo[14:16], processo[16:])
+    return processo
 
 def preencher_valores_nulos(coluna_dataframe:Series, valor:int=0):
     coluna_dataframe = coluna_dataframe.fillna(valor)
